@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "detail-bottom": "../../components/detail-bottom/index",
+    "van-popup": "../../components/vant/popup/index",
+    "van-field": "../../components/vant/field/index",
+    "van-button": "../../components/vant/button/index"
+  }
+}

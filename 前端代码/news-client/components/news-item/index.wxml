@@ -1,0 +1,13 @@
+<!-- components/news-item/news-item.wxml -->
+<view class="item-wrapper">
+  <view class="item-content">
+    <view class="item-title">{{ title }}</view>
+    <view class="item-sub-info">
+      <view class="text-cut" style="width:300rpx;">{{ postAt }}</view>
+      <view>{{ poster }}</view>
+    </view>
+  </view>
+  <view wx:if="{{imageSrc}}" class="item-img">
+    <image src="{{ imageSrc }}" />
+  </view>
+</view>

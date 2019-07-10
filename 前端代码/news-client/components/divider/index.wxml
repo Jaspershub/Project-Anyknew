@@ -1,0 +1,4 @@
+<!--components/divider/index.wxml-->
+<view class="divider">
+  <view class="divider__text">我毫无底线</view>
+</view>

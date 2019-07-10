@@ -1,0 +1,12 @@
+<!-- components/comment/index.wxml -->
+<view class="comment-wrapper">
+    <view class="avatar-wrapper">
+        <image src="{{ item.headimg }}" />
+    </view>
+    <view class="comment-info-wrapper">
+        <view class="username-wrapper">{{ item.wname }} <block wx:if="{{ item.toUserName }}">回复@{{ item.toUserName }}</block></view>
+        <view class="content-wrapper">{{ item.content }}</view>
+        <view class="info-wrapper">{{ item.date }}</view>
+        <!-- <slot></slot> -->
+    </view>
+</view>

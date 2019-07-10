@@ -1,0 +1,36 @@
+<!-- index.wxml -->
+<pre-loading wx:if="{{ !areYouReady }}" controlled="{{ true }}"></pre-loading>
+<view wx:else class="fullheight bg-white">
+  <van-search value="{{ keyword }}" bind:change="onSearchChange" bind:search="onSearchClick" use-action-slot placeholder="请输入搜索关键词">
+    <view slot="action" bind:tap="onSearchClick">搜索</view>
+  </van-search>
+  <van-tabs bind:click="onTabClick">
+    <van-tab title="{{ item.name }}" data-channel-id="{{ item.channelId }}" wx:for="{{ tabList }}" wx:key="`tab${item.channelId}`"></van-tab>
+  </van-tabs>
+  <view class="padding-bottom-tabbar-height">
+    <news-item bind:tap="onNewsItemClick" 
+    class="{{ item.img ? '' : 'margin' }}" data-item="{{ item }}" 
+    wx:for="{{ contentlist }}" wx:key="`newsItem${index}`" 
+    title="{{ item.title }}" postAt="{{ item.pubDate }}" 
+    imageSrc="{{ item.img }}" poster="{{ item.source }}"></news-item>
+    <divider />
+  </view>
+</view>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action text-red">
+    <view class="cuIcon-homefill"></view>
+    首页
+  </view>
+  <view class="action text-gray">
+    <navigator url="../hot/hot" hover-class="none" open-type="switchTab">
+      <view class="cuIcon-rank"></view>
+      热榜
+    </navigator>
+  </view>
+  <view class="action text-gray">
+    <navigator url="../mine/mine" hover-class="none" open-type="switchTab">
+      <view class="cuIcon-my"></view>
+      我的
+    </navigator>
+  </view>
+</view>

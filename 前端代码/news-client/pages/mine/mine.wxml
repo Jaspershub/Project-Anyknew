@@ -1,0 +1,57 @@
+<pre-loading loading="{{ !areYouReady }}">
+  <view class="scrollPage">
+    <view class="UCenter-bg bg-red">
+      <block wx:if="{{ authorized }}">
+        <view class="cu-avatar xl round">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="text-xl">
+          <open-data type="userNickName"></open-data>
+        </view>
+      </block>
+      <block wx:else>
+        <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+      </block>
+      <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+    </view>
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+      <view class="cu-item arrow">
+        <navigator class="content" url="/pages/my-comment/my-comment" hover-class="none">
+          <text class="cuIcon-commentfill text-grey"></text>
+          <text class="text-grey">我的评论</text>
+        </navigator>
+      </view>
+      <view class="cu-item arrow">
+        <navigator class="content" url="/pages/collect/collect" hover-class="none">
+          <text class="cuIcon-favorfill text-orange"></text>
+          <text class="text-grey">我的收藏</text>
+        </navigator>
+      </view>
+      <!-- <view class="cu-item arrow">
+        <navigator class="content" url="/pages/collect/collect" hover-class="none">
+          <text class="cuIcon-appreciatefill text-red"></text>
+          <text class="text-grey">我的点赞</text>
+        </navigator>
+      </view> -->
+    </view>
+    <view class="cu-tabbar-height"></view>
+  </view>
+</pre-loading>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action text-gray">
+    <navigator url="../index/index" hover-class="none" open-type="switchTab">
+      <view class="cuIcon-home"></view>
+      首页
+    </navigator>
+  </view>
+  <view class="action text-gray">
+    <navigator url="../hot/hot" hover-class="none" open-type="switchTab">
+      <view class="cuIcon-rank"></view>
+      热榜
+    </navigator>
+  </view>
+  <view class="action text-red">
+    <view class="cuIcon-myfill"></view>
+    我的
+  </view>
+</view>

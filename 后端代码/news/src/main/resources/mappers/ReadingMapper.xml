@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.news.mapper.ReadingMapper">
+  <resultMap id="BaseResultMap" type="com.springboot.news.model.Reading">
+    <constructor>
+      <arg column="r_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="r_nid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="charnnelid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+
+  <select id="selectReadingByNid" parameterType="String" resultType="String">
+select NULLIF(num,-1) num from reading where r_nid=#{nid}
+  </select>
+<insert id="insertArticleToReading" parameterType="com.springboot.news.model.Reading" useGeneratedKeys="true" keyProperty="rId">
+insert into reading(r_nid,r_ntitle,charnnelid,num) values(#{rNid},#{rNtitle},#{charnnelid},#{num})
+</insert>
+<update id="updateArticleReading" parameterType="java.util.Map">
+  update reading set num=num+1,r_ntitle=#{ntitle},charnnelid=#{channelid} where r_nid=#{nid}
+</update>
+</mapper>

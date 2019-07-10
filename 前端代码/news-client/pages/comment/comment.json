@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "评论列表",
+  "usingComponents": {
+    "comment": "../../components/comment/index",
+    "van-popup": "../../components/vant/popup/index",
+    "van-field": "../../components/vant/field/index",
+    "van-button": "../../components/vant/button/index",
+    "detail-bottom": "../../components/detail-bottom/index"
+  }
+}

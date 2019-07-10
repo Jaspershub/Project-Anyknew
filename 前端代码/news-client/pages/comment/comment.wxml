@@ -1,0 +1,17 @@
+<!-- pages/comment/comment.wxml -->
+<pre-loading loading="{{ !areYouReady }}">
+    <view class="padding-bottom-tabbar-height bg-white">
+        <view class="empty-comment text-lg padding" wx:if="{{ !commentList.length }}">做第一个评论的人</view>
+        <comment wx:for="{{ commentList }}" data-item="{{ item }}" bind:tap="onCommentItemClick" wx:key="`comment${index}`" item="{{ item }}"></comment>
+        <detail-bottom bind:input="onInputClick" showActions="{{ false }}"></detail-bottom>
+    </view>
+</pre-loading>
+<van-popup show="{{ showCommentInput }}" bind:close="onCommentInputClose" position="bottom">
+    <view>
+        <van-field bind:change="onInputChange" placeholder="{{ commentPlaceholder }}" border="{{ false }}" cursor-spacing="{{ 100 }}" value="{{ commentDetail }}" confirm-hold="{{ true }}" use-button-slot>
+            <van-button bind:click="onPostComment" slot="button" size="small" type="info">
+                发表评论
+            </van-button>
+        </van-field>
+    </view>
+</van-popup>

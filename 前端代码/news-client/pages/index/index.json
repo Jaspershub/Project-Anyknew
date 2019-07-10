@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "news-item": "../../components/news-item/index",
+    "divider": "../../components/divider/index",
+    "van-tab": "../../components/vant/tab/index",
+    "van-tabs": "../../components/vant/tabs/index",
+    "comment": "../../components/comment/index",
+    "van-search": "../../components/vant/search/index"
+  }
+}

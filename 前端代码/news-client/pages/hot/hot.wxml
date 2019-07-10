@@ -1,0 +1,57 @@
+<!-- pages/hot/hot.wxml -->
+<pre-loading wx:if="{{ !areYouReady }}" controlled="{{ true }}"></pre-loading>
+<view wx:else class="fullheight bg-white">
+    <van-tabs bind:click="onTabClick">
+        <van-tab title="{{ item.label }}" data-site="{{ item.name }}" wx:for="{{ hotstorySiteList }}" wx:key="`tab${item.name}`"></van-tab>
+    </van-tabs>
+    <view class="padding-bottom-tabbar-height">
+        <van-tabs wx:if="{{ hotList.length > 1 }}">
+            <van-tab title="{{ item.attrs.cn }}" active="{{ hotTabActive }}" wx:for="{{ hotList }}" wx:key="`hotItem${item.name}`">
+                <view class="hot-item padding" bind:tap="onGoToWebPage" data-item="{{ hotItem }}" wx:for="{{ item.items }}" wx:for-index="hotIndex" wx:for-item="hotItem" wx:key="item.iid">
+                    <view class="hot-num text-lg {{ hotIndex <= 2 ? 'text-red' : 'text-orange' }}">
+                        {{ hotIndex + 1 }}
+                    </view>
+                    <view class="margin-left-sm hot-title">{{ hotItem.title }}</view>
+                    <view wx:if="{{ hotItem.ext }}" class="ext text-sm text-grey">{{ hotItem.ext }}</view>
+                </view>
+            </van-tab>
+        </van-tabs>
+        <view wx:else>
+            <block wx:for="{{ hotList }}" wx:key="`hotSingle${index}`">
+                <view class="cu-bar bg-white">
+                    <view class="action">
+                        <text class="cuIcon-title text-red"></text>
+                        <text>{{ item.attrs.cn  }}</text>
+                    </view>
+                </view>
+                <view class="hot-item padding" bind:tap="onGoToWebPage" data-item="{{ hotItem }}" wx:for="{{ item.items }}" wx:for-index="hotIndex" wx:for-item="hotItem" wx:key="item.iid">
+                    <view class="hot-num text-lg {{ hotIndex <= 2 ? 'text-red' : 'text-orange' }}">
+                        {{ hotIndex + 1 }}
+                    </view>
+                    <view class="margin-left-sm hot-title">{{ hotItem.title }}</view>
+                    <view wx:if="{{ hotItem.ext }}" class="ext text-sm text-grey">
+                        {{ hotItem.ext }}
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>
+<view class="cu-bar tabbar bg-white shadow foot">
+    <view class="action text-gray">
+        <navigator url="../index/index" hover-class="none" open-type="switchTab">
+            <view class="cuIcon-home"></view>
+            首页
+        </navigator>
+    </view>
+    <view class="action text-red">
+        <view class="cuIcon-rankfill"></view>
+        热榜
+    </view>
+    <view class="action text-gray">
+        <navigator url="../mine/mine" hover-class="none" open-type="switchTab">
+            <view class="cuIcon-my"></view>
+            我的
+        </navigator>
+    </view>
+</view>

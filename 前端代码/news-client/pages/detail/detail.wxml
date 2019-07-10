@@ -1,0 +1,20 @@
+<!-- pages/detail/detail.wxml -->
+<pre-loading loading="{{ !areYouReady }}">
+    <view class="detail-wrapper padding-bottom-tabbar-height bg-white padding">
+        <view class="detail-title text-black text-xxl">{{ title }}</view>
+        <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}" /> -->
+        <block wx:for="{{ contentList }}" wx:key="`content${index}`">
+            <view class="margin-top text-lg text-indent" wx:if="{{ !item.url && index !== 0 }}">{{ item }}</view>
+            <image class="margin-top" wx:elif="{{ item.url && index !== contentList.length - 1 && index !== contentList.length - 2 }}" src="{{ item.url }}" />
+        </block>
+    </view>
+    <detail-bottom bind:like="onLikeClick" is-collection="{{ isCollection }}" is-thumbup="{{ isThumbup }}" bind:thumb="onThumbClick" bind:input="onInputClick" bind:comment="onCommentClick"></detail-bottom>
+</pre-loading>
+<van-notify id="van-notify" />
+<van-popup show="{{ showCommentInput }}" bind:close="onCommentInputClose" position="bottom">
+    <view>
+        <van-field bind:change="onInputChange"  placeholder="有何高见，展开讲讲" border="{{ false }}" cursor-spacing="{{ 100 }}" value="{{ commentDetail }}" confirm-hold="{{ true }}" use-button-slot>
+            <van-button bind:click="onPostComment" slot="button" size="small" type="info">发表评论</van-button>
+        </van-field>
+    </view>
+</van-popup>

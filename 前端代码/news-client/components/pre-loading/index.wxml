@@ -1,0 +1,20 @@
+<!-- components/pre-loading/index.wxml -->
+<block wx:if="{{ !controlled }}">
+    <block wx:if="{{ loading }}">
+        <view class="pre-loading bg-white">
+            <view class="flex-sub radius shadow-lg">
+                <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"></image>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <slot></slot>
+    </block>
+</block>
+<block wx:else>
+    <view class="pre-loading bg-white">
+        <view class="flex-sub radius shadow-lg">
+            <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"></image>
+        </view>
+    </view>
+</block>

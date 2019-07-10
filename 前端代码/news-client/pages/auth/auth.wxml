@@ -1,0 +1,12 @@
+<!--pages/auth/auth.wxml-->
+<view class="fullheight flex-direction bg-red flex solid-bottom align-center justify-center">
+  <block wx:if="{{ !authFail }}">
+    <view class="text-xxl">不放过每一刻</view>
+    <button class="cu-btn  bg-white shadow margin" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权访问</button>
+  </block>
+  <block wx:else>
+    <view class="text-xxl">请让我与你相识</view>
+    <view class="text-xs">勾选使用“用户信息”</view>
+    <button class="cu-btn  bg-white shadow margin" open-type="openSetting">赏赐昵称</button>
+  </block>
+</view>

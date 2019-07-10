@@ -1,0 +1,30 @@
+/* components/divider/index.wxss */
+.divider {
+    margin-bottom: 15px;
+    display: table;
+    white-space: nowrap;
+    text-align: center;
+    background: transparent;
+    font-weight: 500;
+    /* color: rgba(0, 0, 0, 0.85); */
+    /* font-size: 16px; */
+    border-top: none !important;
+}
+
+.divider__text {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.divider:before,
+.divider:after {
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 50%;
+    width: 50%;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #e8e8e8;
+    transform: translateY(50%);
+}

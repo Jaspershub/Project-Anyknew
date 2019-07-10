@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.news.mapper.CollectionMapper">
+  <resultMap id="BaseResultMap" type="com.springboot.news.model.Collect">
+    <constructor>
+      <arg column="col_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="col_nid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="col_uid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="col_date" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+
+  <insert id="insertCollection" parameterType="com.springboot.news.model.Collect">
+    insert into collection ( col_nid, col_uid,
+      col_ntitle, col_date)
+    values (#{colNid,jdbcType=VARCHAR}, #{colUid,jdbcType=INTEGER},
+      #{colNtitle,jdbcType=VARCHAR}, #{colDate,jdbcType=TIMESTAMP})
+  </insert>
+ <!-- <insert id="insertSelective" parameterType="com.springboot.news.model.Collect">
+    insert into collection
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="colId != null">
+        col_id,
+      </if>
+      <if test="colNid != null">
+        col_nid,
+      </if>
+      <if test="colUid != null">
+        col_uid,
+      </if>
+      <if test="colNtitle != null">
+        col_ntitle,
+      </if>
+      <if test="colDate != null">
+        col_date,
+      </if>
+      <if test="colIsDeleted != null">
+        col_is_deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="colId != null">
+        #{colId,jdbcType=INTEGER},
+      </if>
+      <if test="colNid != null">
+        #{colNid,jdbcType=VARCHAR},
+      </if>
+      <if test="colUid != null">
+        #{colUid,jdbcType=INTEGER},
+      </if>
+      <if test="colNtitle != null">
+        #{colNtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="colDate != null">
+        #{colDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="colIsDeleted != null">
+        #{colIsDeleted,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>-->
+  <delete id="deleteCollection" parameterType="java.util.Map">
+
+    delete from collection where col_uid = #{uid} and col_nid=#{nid}
+
+  </delete>
+
+  <select id="selectAllCollectionByUid" parameterType="java.util.Map"  resultMap="collectMap" >
+
+    select * from collection where col_uid = #{uid} limit #{begin},#{num}
+
+  </select>
+
+  <select id="selectCollectionByUidAndNid" parameterType="java.util.Map" resultMap="collectMap" >
+     select * from collection where col_uid = #{uid} and  col_nid = #{nid}
+  </select>
+  <resultMap id="collectMap" type="com.springboot.news.model.Collect">
+    <result column="col_id" property="colId"></result>
+
+    <result column="col_nid" property="colNid"></result>
+    <result column="col_uid" property="colUid"></result>
+    <result column="col_ntitle" property="colNtitle"></result>
+    <result column="col_date" property="colDate"></result>
+  </resultMap>
+
+</mapper>

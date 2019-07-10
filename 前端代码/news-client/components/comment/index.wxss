@@ -1,0 +1,42 @@
+/* components/comment/index.wxss */
+
+.comment-wrapper {
+    display: flex;
+    padding: 10rpx;
+}
+
+.avatar-wrapper {
+    width: 90rpx;
+    padding-top: 25rpx;
+    padding-left: 20rpx;
+}
+
+.comment-info-wrapper {
+    flex: 1 1 auto;
+}
+
+.avatar-wrapper image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+
+.comment-info-wrapper {
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+}
+
+.username-wrapper {
+    font-size: 26rpx;
+}
+
+.content-wrapper {
+    padding: 4rpx 0 6rpx 0;
+    font-size: 30rpx;
+    word-break: break-all;
+}
+
+.info-wrapper {
+    font-size: 24rpx;
+    color: #a7a7a7;
+}

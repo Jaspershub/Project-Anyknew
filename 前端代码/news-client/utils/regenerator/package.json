@@ -1,0 +1,91 @@
+{
+  "_from": "regenerator",
+  "_id": "regenerator@0.14.1",
+  "_inBundle": false,
+  "_integrity": "sha512-gbvT/2NduvWa7hw+v5R0tETaFRvbvPAiTLoqMPjcaP5bvBG55hQHDxKwwolKSS5ZcQcrQNnwI90TDAzmtFYwWg==",
+  "_location": "/regenerator",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "regenerator",
+    "name": "regenerator",
+    "escapedName": "regenerator",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/regenerator/-/regenerator-0.14.1.tgz",
+  "_shasum": "58b8f72337622ade79c79c6b55a82f47e2f96fd5",
+  "_spec": "regenerator",
+  "_where": "E:\\source code\\mp-projects\\news-client\\fuck",
+  "author": {
+    "name": "Ben Newman",
+    "email": "bn@cs.stanford.edu"
+  },
+  "bin": {
+    "regenerator": "bin/regenerator"
+  },
+  "bugs": {
+    "url": "https://github.com/facebook/regenerator/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/runtime": "^7.4.4",
+    "@babel/types": "^7.4.4",
+    "commoner": "^0.10.8",
+    "private": "^0.1.8",
+    "recast": "^0.17.6",
+    "regenerator-preset": "^0.13.0",
+    "regenerator-runtime": "^0.13.2",
+    "regenerator-transform": "^0.14.0",
+    "through": "^2.3.8"
+  },
+  "deprecated": false,
+  "description": "Source transformer enabling ECMAScript 6 generator functions (yield) in JavaScript-of-today (ES5)",
+  "devDependencies": {
+    "@babel/parser": "^7.4.4",
+    "@babel/plugin-transform-parameters": "^7.4.4",
+    "@babel/plugin-transform-spread": "^7.2.2",
+    "babel-check-duplicated-nodes": "^1.0.0",
+    "browserify": "^16.2.3",
+    "mocha": "^6.1.4",
+    "promise": "^8.0.3",
+    "semver": "^6.0.0",
+    "uglify-js": "^3.5.9"
+  },
+  "engines": {
+    "node": ">= 0.6"
+  },
+  "homepage": "http://github.com/facebook/regenerator",
+  "keywords": [
+    "generator",
+    "yield",
+    "coroutine",
+    "rewriting",
+    "transformation",
+    "syntax",
+    "codegen",
+    "rewriting",
+    "refactoring",
+    "transpiler",
+    "desugaring",
+    "ES6"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "name": "regenerator",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/facebook/regenerator.git"
+  },
+  "scripts": {
+    "test": "test/run.sh"
+  },
+  "version": "0.14.1"
+}

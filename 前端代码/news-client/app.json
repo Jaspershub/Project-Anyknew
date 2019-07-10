@@ -1,0 +1,42 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/mine/mine",
+        "pages/hot/hot",
+        "pages/web/web",
+        "pages/auth/auth",
+        "pages/detail/detail",
+        "pages/comment/comment",
+        "pages/collect/collect",
+        "pages/my-comment/my-comment"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#e54d42",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "list": [{
+                "pagePath": "pages/auth/auth",
+                "text": "欢迎你"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/hot/hot",
+                "text": "新闻热榜"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "pre-loading": "../../components/pre-loading/index",
+        "van-notify": "../../components/vant/notify/index"
+    },
+    "sitemapLocation": "sitemap.json"
+}

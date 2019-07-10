@@ -1,0 +1,12 @@
+<!-- components/detail-bottom/detail-bottom.wxml -->
+<view class="detail-bottom-wrapper">
+  <view bind:tap="onInputClick" class="fake-input">有何高见，展开讲讲</view>
+  <view wx:if="{{ showActions }}" class="actions">
+    <van-icon bind:tap="onThumbClick" size="28px" name="thumb-circle-o" color="{{!isThumbup ? '' : 'red'}}" />
+    <van-icon bind:tap="onCommentClick" size="28px" name="smile-comment-o" />
+    <van-icon bind:tap="onLikeClick" size="28px" name="{{ !isCollection ? 'like-o' : 'like' }}"  color="{{!isCollection ? '' : 'red'}}" />
+    <button class="my-share" open-type="share">
+      <van-icon  bind:tap="onShareClick" size="28px" name="share" />
+    </button>
+  </view>
+</view>

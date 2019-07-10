@@ -1,0 +1,12 @@
+<!-- pages/collect/collect.wxml -->
+<pre-loading loading="{{ !areYouReady }}">
+  <view class="fullheight bg-white">
+
+ <news-item bind:tap="onNewsItemClick" 
+    class="{{ item.img ? '' : 'margin' }}" data-item="{{ item }}" 
+    wx:for="{{ contentlist }}" wx:key="`newsItem${index}`" 
+    title="{{ item.ntitle }}" postAt="{{ item.date }}" 
+    imageSrc="{{ item.img }}" poster="{{ item.source }}"></news-item>
+    <divider></divider>
+  </view>
+</pre-loading>

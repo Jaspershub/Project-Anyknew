@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "热门新闻",
+  "usingComponents": {
+    "news-item": "../../components/news-item/index",
+    "pre-loading": "../../components/pre-loading/index",
+    "divider": "../../components/divider/index",
+    "van-tab": "../../components/vant/tab/index",
+    "van-tabs": "../../components/vant/tabs/index"
+  }
+}

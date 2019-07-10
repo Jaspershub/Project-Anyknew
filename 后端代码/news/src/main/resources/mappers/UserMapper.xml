@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.news.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.springboot.news.model.User">
+    <constructor>
+      <arg column="u_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="wname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sex" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="age" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="country" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="province" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="headimg" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="openid" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+
+  <select id="selectAllUser"  resultType="java.util.HashMap">
+    select * from user;
+  </select>
+<select id="selectUidByOpenId" parameterType="String" resultType="String">
+  select u_id from user where openid=#{openid}
+</select>
+    <select id="selectUserByUid" parameterType="int" resultType="com.springboot.news.model.User">
+        select * from user where u_id=#{uid}
+    </select>
+  <insert id="insertUser" parameterType="com.springboot.news.model.User" useGeneratedKeys="true" keyProperty="uId">
+    insert into user(wname,sex,age,country,province,city,headimg,openid) values(#{wname},#{sex},#{age},#{country},#{province},#{city},#{headimg},#{openid})
+  </insert>
+  <update id="updateUser" parameterType="com.springboot.news.model.User">
+    update user
+    <trim prefix="set" suffixOverrides=",">
+<if test="wname!=null">wname=#{wname},</if>
+      <if test="sex!=null">sex=#{sex},</if>
+      <if test="age!=null">age=#{age},</if>
+      <if test="country!=null">country=#{country},</if>
+      <if test="province!=null">province=#{province},</if>
+      <if test="city!=null">city=#{city},</if>
+      <if test="headimg!=null">headimg=#{headimg},</if>
+    </trim>
+    where u_id=#{uId}
+  </update>
+</mapper>

@@ -1,0 +1,21 @@
+/* pages/hot/hot.wxss */
+
+.hot-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hot-title {
+    flex: 1;
+}
+
+.hot-num {
+    font-weight: bold;
+}
+
+.ext {
+    width: 100rpx;
+    /* background-color: aqua; */
+    text-align: right;
+}

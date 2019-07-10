@@ -1,0 +1,17 @@
+/* pages/detail/detail.wxss */
+.detail-wrapper {
+    padding: 20rpx 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-title {
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.text-indent {
+    text-indent: 64rpx;
+}

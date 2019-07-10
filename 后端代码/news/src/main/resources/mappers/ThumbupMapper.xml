@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.news.mapper.ThumbupMapper">
+  <resultMap id="BaseResultMap" type="com.springboot.news.model.Thumbup">
+    <constructor>
+      <arg column="thu_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="thu_nid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="thu_uid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+
+  <insert id="insertThumbup" parameterType="com.springboot.news.model.Thumbup">
+    insert into thumbup ( thu_nid, thu_uid)
+    values (#{thuNid}, #{thuUid})
+  </insert>
+
+  <delete id="deleteThumbup" parameterType="java.util.Map">
+
+    delete from thumbup where thu_uid = #{uid} and thu_nid=#{nid}
+
+  </delete>
+
+
+
+  <select id="selectThumbupByUidAndNid" parameterType="java.util.Map" resultMap="thumbupMap" >
+     select * from thumbup where thu_uid = #{uid} and  thu_nid = #{nid}
+  </select>
+  <resultMap id="thumbupMap" type="com.springboot.news.model.Thumbup">
+    <result column="thu_id" property="thuId"></result>
+
+    <result column="thu_nid" property="thuNid"></result>
+    <result column="thu_uid" property="thuUid"></result>
+
+  </resultMap>
+
+</mapper>

@@ -1,0 +1,75 @@
+{
+    "name": "news-client",
+    "version": "0.1.3",
+    "private": false,
+    "description": "A simple news Weapp",
+    "license": "MIT",
+    "devDependencies": {},
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "eslint:recommended"
+        ],
+        "rules": {
+            "quotes": [
+                "error",
+                "single"
+            ],
+            "semi": [
+                "error",
+                "always"
+            ],
+            "block-spacing": [
+                "error",
+                "always"
+            ],
+            "brace-style": [
+                "error",
+                "stroustrup",
+                {
+                    "allowSingleLine": true
+                }
+            ],
+            "implicit-arrow-linebreak": [
+                "error",
+                "beside"
+            ],
+            "indent": [
+                2,
+                4
+            ],
+            "object-curly-newline": [
+                "error",
+                {
+                    "ObjectExpression": "always",
+                    "ObjectPattern": "never"
+                }
+            ]
+        },
+        "parserOptions": {
+            "parser": "babel-eslint"
+        }
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ],
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "dependencies": {
+        "regenerator": "^0.14.1",
+        "vant-weapp": "^0.5.8"
+    }
+}
